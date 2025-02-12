@@ -1,0 +1,177 @@
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #0056b3;
+    --background: #f4f4f4;
+    --text-light: #ffffff;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+                 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex; /* Используем flex для горизонтального расположения элементов */
+    justify-content: center;
+    gap: 1.5rem; /* Пространство между элементами */
+    margin-top: 1rem;
+    background-color: var(--secondary-color); /* Фоновый цвет */
+    border-radius: 6px; /* Закругленные углы */
+    padding: 0.5rem; /* Отступы */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Отступы внутри ссылок */
+    border-radius: 4px; /* Закругленные углы для ссылок */
+    transition: var(--transition);
+    display: inline-block; /* Убедимся, что ссылки ведут себя как блочные элементы */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Цвет фона при наведении */
+    transform: translateY(-2px);
+}
+
+main {
+    padding: 2rem;
+    max-width: 90%;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    main {
+        max-width: 700px;
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 390px) {
+    main {
+        padding: 1.5rem; /* Уменьшаем отступы для мобильных устройств */
+    }
+
+    nav {
+        padding: 0.3rem; /* Уменьшаем отступы в навигации */
+    }
+
+    nav a {
+        padding: 0.4rem 0.8rem; /* Уменьшаем отступы внутри ссылок */
+    }
+
+    h1 {
+        font-size: 2rem; /* Уменьшаем размер заголовка для мобильных */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Уменьшаем размер подзаголовка для мобильных */
+    }
+
+    footer {
+        padding: 1.5rem; /* Уменьшаем отступы в футере */
+    }
+
+    button {
+        padding: 0.6rem 1rem; /* Уменьшаем отступы кнопки */
+    }
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-weight: 600;
+    color: #333;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    align-self: flex-start;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--background);
+    margin-top: 3rem;
+    border-top: 1px solid #ddd;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        transform: none !important;
+    }
+}
